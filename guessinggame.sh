@@ -1,14 +1,21 @@
-echo "Guess how many files in the current directory?"
 
-if [[ $1 -eq 3 ]]
-then
-	echo "$1 is correct."
-if [[ $1 -lt 3 ]]
-then
-	echo "Too low..."
-else
-	echo "Too high!"
-fi
+echo "Guess how many files in this directory?"
 
-echo "End program"
+while read guessInt;
+	do
+     		if [[ $guessInt -lt 3 ]];
+     		then
+        		echo "Your guess is too low, try again!"
 
+     		elif [[ $guessInt -gt 3 ]];
+     		then
+        		echo "Your guess is too high, try again!"
+
+     		else
+        	    	break
+     		fi
+	done
+
+	echo "Yay!!! $guessInt is correct!"
+
+exit
